@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <!--
+  <head>
+    <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
 
@@ -14,46 +14,38 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  <base href="/">
+    <base href="/" />
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Bélinda G. Freitas portfolio">
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="Software engineer — Backend, mobile and desktop apps development" />
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Bélinda G. Freitas">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <!-- Open Graph / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://belinda-g-freitas.github.io" />
+    <meta property="og:title" content="Belinda G. E. A. FREITAS | Software Engineer" />
+    <meta property="og:description" content="Backend, mobile & desktop apps developer | Curious by nature | Builder by choice | Portfolio" />
+    <meta property="og:image" content="https://belinda-g-freitas.github.io/preview.png" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.ico"/>
+    <!-- Twitter (WhatsApp also reads this sometimes) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Belinda G. E. A. FREITAS | Software Engineer" />
+    <meta name="twitter:description" content="Backend, mobile & desktop apps developer | Curious by nature | Builder by choice | Portfolio" />
+    <meta name="twitter:image" content="https://belinda-g-freitas.github.io/preview.png" />
 
-  <title>Bélinda G. Freitas</title>
-  <link rel="manifest" href="manifest.json">
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Belinda G. E. A. FREITAS" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
 
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "1498720434";
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
-</head>
-<body>
-  <script>
-    window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
-        }
-      });
-    });
-  </script>
-</body>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.ico" />
+
+    <title>Belinda G. E. A. FREITAS | Software Engineer</title>
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <script src="flutter_bootstrap.js" async></script>
+  </body>
 </html>
