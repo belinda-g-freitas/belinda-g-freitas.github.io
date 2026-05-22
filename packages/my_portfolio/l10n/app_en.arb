@@ -68,7 +68,7 @@
   "gochapMerchantDescription": "A POS application to help merchants manage their points of sale, devices, products, orders, etc.",
   "talentuniversDescription": "A mobile platform to connect talents, entreprises, businesses, providers and investors",
   "gofariiDescription": "Mobile platform for comparing transport options in west Africa. Worked on the app's v1.",
-  "collapsibleSideMenuDescription": "I was working on a dashboard project where I needed a collapsible side menu with easily customizable submenus. After searching on pub.dev, I couldn’t find anything suitable, so I implemented the feature from scratch. In the end, I thought, “Why not share it with the community?”—and that’s what I did.",
+  "collapsibleSideMenuDescription": "I was working on a dashboard project where I needed a collapsible side menu with easily customizable submenus. After searching on pub.dev, I couldn’t find anything suitable, so I implemented the feature from scratch. In the end, I thought, “Why not share it with the community?” and that’s what I did.",
   "linkPreviewErrorBody": "Oops! Something went wrong.",
   "stack": "Stack"
 }

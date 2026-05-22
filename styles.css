@@ -88,13 +88,10 @@ body {
   gap: 10px 10px;
 }
 
-/* column */
 .column {
   display: flex;
   flex-direction: column;
-  /* mainAxisAlignment */
-  justify-content: center;
-  /* crossAxisAlignment */
+  justify-content: start;
   align-items: flex-start;
 }
 
@@ -102,17 +99,13 @@ body {
 .row {
   display: flex;
   flex-direction: row;
-  /* mainAxisAlignment */
   justify-content: flex-start;
-  /* crossAxisAlignment */
   align-items: center;
 }
 .row-end {
   display: flex;
   flex-direction: row;
-  /* mainAxisAlignment */
   justify-content: flex-end;
-  /* crossAxisAlignment */
   align-items: center;
 }
 
@@ -234,18 +227,19 @@ body {
 
 /*  */
 .outlined-border {
-  border: 0.7px solid var(--bg);
+  border: 0.7px solid var(--text);
   border-radius: var(--border-radius);
 }
 
-.profile-image {
+.avatar {
   border-radius: 50%;
   border: 1px solid white;
   width: 150px;
   height: 150px;
-  object-fit: cover;
-  object-position: top center;
-   background-repeat: no-repeat;
+  background-image: url('assets/images/belinda.png');
+  background-size: cover;
+  background-position: top center;
+  background-size: 150% auto;
 }
 
 .main-content-row {
@@ -265,8 +259,49 @@ body {
   display: flow-root;
 }
 
-/* MENU & DRAWER */
-.nav-drawer {
+/* language btn dropdown */
+.dropdown-container {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-trigger {
+  display: flex;
+  padding: 5px 5px 5px 2px;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  background-color: unset;
+}
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  align-self: center;
+  z-index: 1000;
+  min-width: 100px;
+  max-width: calc(100vw - 16px);
+  padding: 4px 0;
+  border: 0.5px solid var(--secondary-text);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: var(--bg-color);
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 10px 8px 10px 8px;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  text-align: left;
+  background-color: unset;
+}
+.dropdown-item:hover {
+  background-color: rgba(245, 245, 245, 0.163);
+}
+
+/* DRAWER */
+.drawer {
   padding: 25px 15px;
   position: relative;
   top: 0;
@@ -287,6 +322,45 @@ body {
   display: flow-root;
 }
 
+.drawer .header {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+.drawer .divider {
+  border: none;
+  border-top: 2px solid rgba(245, 245, 245, 0.308);
+  margin: 25px 0;
+}
+
+.drawer-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 5px;
+}
+
+.drawer-btn {
+  padding: 10px;
+  border: none;
+  background: transparent;
+  color: #d7d7d7 !important;
+  cursor: pointer;
+  font-size: 15px;
+  width: 100%;
+}
+.drawer-btn.active {
+  border: 1.5px solid var(--app-color);
+  color: #fff !important;
+  font-weight: 600;
+}
+.drawer-btn:hover {
+  background: rgba(245, 245, 245, 0.163);
+}
+
+/* NAVBAR */
 .nav-overlay {
   position: fixed;
   top: 0;
@@ -304,15 +378,26 @@ body {
 
 .menu-btn {
   display: flex;
-  align-items: center;
   justify-content: center;
-  /* background: transparent; */
+  align-items: center;
+  background: none;
   min-height: 38px;
   min-width: 38px;
   border-radius: var(--border-radius);
+  /* to avoid relief look */
+  padding: 0;
+  appearance: none;
+  border: none;
+  outline: none;
+  /* cursor: pointer; */
 }
 .menu-btn:hover {
   background: rgba(245, 245, 245, 0.163);
+}
+.menu-btn:focus,
+.menu-btn:active {
+  outline: none;
+  border: none;
 }
 
 .menu-close-btn {
@@ -327,31 +412,141 @@ body {
   font-size: 30px;
 }
 
-/* Desktop: show drawer inline, hide navbar */
+/* projects and packages UI */
+.project-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 5px;
+  border: 0.7px solid var(--app-color);
+  border-radius: 10px;
+  width: calc(
+    50% - 5px
+  ); /* box.maxWidth >= kBreakpoint → (maxWidth / 2) - 10 */
+  box-sizing: border-box;
+}
+/* top meta row */
+.project-meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 5px;
+}
+.project-period {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap; /* Wrap widget */
+  align-items: flex-end;
+  gap: 5px;
+  font-size: 12px;
+  /* color: var(); */
+}
+.project-company {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 3px;
+}
+.company-logo {
+  width: 25px;
+  height: 25px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+/* clickable body row */
+a.project-body,
+div.project-body {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+}
+/* project thumbnail */
+.project-thumb {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin: 0 0 5px 5px;
+  flex-shrink: 0;
+}
+/* title + description */
+.project-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px 10px 10px 0;
+}
+.project-title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.project-title-row h3 {
+  flex: 1;
+  margin: 0;
+  font-size: 14px;
+}
+.project-desc {
+  font-size: 12px;
+  letter-spacing: 0.7px;
+  line-height: 1.2;
+  color: var(--secondary-text);
+  display: -webkit-box;
+  -webkit-line-clamp: 12; /* maxLines: 10 */
+  line-clamp: 12; /* maxLines: 10 */
+  -webkit-box-orient: vertical;
+  overflow: hidden; /* overflow: .ellipsis */
+  margin: 0;
+}
+
+/* Desktop UI */
 @media screen and (min-width: 625px) {
-  .nav-drawer {
+  .drawer {
     display: block;
   }
+  .drawer .header {
+    justify-content: space-between;
+  }
+
   .navbar {
     display: none;
   }
   .nav-overlay {
     display: none;
   }
+
+  .dropdown-menu {
+    left: 0;
+  }
 }
-/* obile: hide drawer by default, show navbar */
+/* obile UI */
 @media screen and (max-width: 624px) {
   .main-content {
     padding-top: calc(30px + var(--navbar-height));
   }
-  .nav-drawer {
+
+  .drawer {
     position: fixed;
     z-index: 100;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     box-shadow: none;
   }
-  .nav-drawer.drawer--open {
+  .drawer .header {
+    justify-content: center;
+  }
+  /* hide these btns on mobile */
+  .drawer .header #language-toggle,
+  .drawer .header #theme-toggle {
+    display: none;
+  }
+  .drawer.drawer--open {
     transform: translateX(0);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) 0 1px 3px rgba(0, 0, 0, 0.08);
   }
@@ -363,6 +558,7 @@ body {
     right: 0px;
     z-index: 101;
   }
+
   .navbar {
     display: flex;
     flex-direction: row;
@@ -385,44 +581,15 @@ body {
     /*  */
     box-sizing: border-box;
   }
-}
 
-.nav-drawer .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: start;
-}
-.nav-drawer .divider {
-  border: none;
-  border-top: 2px solid rgba(245, 245, 245, 0.308);
-  margin: 25px 0;
-}
+  .dropdown-menu {
+    right: 0;
+  }
 
-.nav-btns {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  row-gap: 5px;
-}
-
-.nav-btn {
-  padding: 7px;
-  border: none;
-  background: transparent;
-  color: #d7d7d7 !important;
-  cursor: pointer;
-  font-size: 15px;
-  width: 100%;
-}
-.nav-btn.active {
-  border: 1.5px solid var(--app-color);
-  color: #fff !important;
-  font-weight: 600;
-}
-.nav-btn:hover {
-  background: rgba(245, 245, 245, 0.163);
+  .project-tile {
+    width: 100%;
+    max-width: 400px;
+  }
 }
 
 /* BUTTONS */
@@ -475,6 +642,12 @@ body {
   box-shadow: 0 2px 5px 1px var(--shadowed-circle-shadow-color);
 }
 
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
 /* about section */
 .about-section {
   display: flex;
@@ -486,9 +659,10 @@ body {
 .toggle-label {
   position: relative;
   display: inline-block;
-  width: 47px;
+  min-width: 47px;
   height: 30px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 .toggle-input {
   opacity: 0;
@@ -567,119 +741,26 @@ body {
   margin-left: 16px;
 }
 
-/* projects and packages UI */
-/* LayoutBuilder constraint logic */
-.project-tile {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  padding: 5px;
-  border: 0.7px solid var(--app-color);
-  border-radius: 10px;
-  width: calc(
-    50% - 10px
-  ); /* box.maxWidth >= kBreakpoint → (maxWidth / 2) - 10 */
-  box-sizing: border-box;
-}
-@media (max-width: 625px) {
-  .project-tile {
-    width: 100%;
-    max-width: 350px; /* BoxConstraints.loose fallback */
-  }
-}
-/* top meta row */
-.project-meta {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
-  gap: 5px;
-}
-.project-period {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap; /* Wrap widget */
-  align-items: flex-end;
-  gap: 5px;
-  font-size: 12px;
-  /* color: var(); */
-}
-.project-company {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  gap: 3px;
-}
-.company-logo {
-  width: 25px;
-  height: 25px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-/* clickable body row */
-a.project-body,
-div.project-body {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: flex-start;
-  text-decoration: none;
-  color: inherit;
-}
-/* app thumbnail */
-.project-thumb {
-  width: 70px;
-  height: 70px;
-  border-radius: 10px;
-  object-fit: cover;
-  margin: 0 0 5px 5px;
-  flex-shrink: 0;
-}
-/* title + description */
-.project-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 15px 10px 10px 0;
-}
-.project-title-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-}
-.project-title-row h3 {
-  flex: 1;
-  margin: 0;
-  font-size: 14px;
-}
-.project-desc {
-  font-size: 12px;
-  letter-spacing: 0.7px;
-  line-height: 1.2;
-  color: var(--secondary-text);
-  display: -webkit-box;
-  -webkit-line-clamp: 10; /* maxLines: 10 */
-  line-clamp: 10; /* maxLines: 10 */
-  -webkit-box-orient: vertical;
-  overflow: hidden; /* overflow: .ellipsis */
-  margin: 0;
-}
-
 /* scrollbar UI */
 
 /* Chrome, Edge, Safari */
-::-webkit-scrollbar {
-  width: 14px;
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
 }
+*:hover {
+  scrollbar-color: rgba(245, 245, 245, 0.163) transparent;
+}
+/* ::-webkit-scrollbar {
+  width: 8px;
+} */
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(245, 245, 245, 0.163);
-  border-radius: 999px;
-  border: 3px solid transparent;
+  background: transparent;
+  border-radius: 4px;
+  /* border: 3px solid transparent; */
   background-clip: content-box;
   min-height: 40px;
 }
@@ -687,6 +768,9 @@ div.project-body {
   background: grey;
   background-clip: content-box;
 }
+/* *:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+} */
 /* hide browser default scrollbar */
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
