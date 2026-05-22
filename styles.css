@@ -29,7 +29,7 @@
 
   --breakpoint: 625px;
   --border-radius: 10px;
-  --navbar-height: 56px;
+  --navbar-height: 50px;
 
   line-height: 1.2;
   font-size: 14px;
@@ -404,11 +404,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: white;
-  color: red;
-  height: 35px;
+  background: none;
+  color: white;
+  height: 33px;
   width: 35px;
-  border-radius: var(--border-radius);
+  margin-right: 10px;
+  border: 0.5px solid white;
+  border-radius: 7px;
   font-size: 30px;
 }
 
@@ -659,8 +661,8 @@ button {
 .toggle-label {
   position: relative;
   display: inline-block;
-  min-width: 47px;
-  height: 30px;
+  width: 40px;
+  height: 28px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
@@ -679,7 +681,7 @@ button {
   background-color: #c6c5c5;
   border-radius: 26px;
   transition: 0.3s;
-  border: 1px solid #283a4d;
+  border: 1px solid #c6c5c5; /* #283a4d; */
 }
 .toggle-slider:before {
   content: '';
@@ -687,7 +689,7 @@ button {
   height: 25px;
   width: 25px;
   left: 2px;
-  bottom: 2px;
+  /* bottom: 2px; */
   background-color: var(--toggle-slider-bg);
   border-radius: 50%;
   transition: 0.3s;
@@ -703,7 +705,7 @@ button {
   background-color: rgba(128, 128, 128, 0.6);
 }
 .toggle-input:checked + .toggle-slider:before {
-  transform: translateX(17px);
+  transform: translateX(10px);
   background-color: var(--toggle-slider-bg);
   background-image: url('assets/icons/svg/moon.svg');
 }
