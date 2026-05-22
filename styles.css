@@ -530,7 +530,7 @@ div.project-body {
 /* obile UI */
 @media screen and (max-width: 624px) {
   .main-content {
-    padding-top: calc(30px + var(--navbar-height));
+    padding-top: calc(30px + var(--navbar-height)) !important;
   }
 
   .drawer {
