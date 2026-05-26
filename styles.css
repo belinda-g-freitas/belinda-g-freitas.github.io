@@ -1,15 +1,14 @@
 :root {
   --orange: #ea4701;
   --yellow: #fdc70b;
-  --green: #49ae7e;
-  --dark-btn-color: #283a4d;
+  /* --dark-btn-color: #283a4d; */
   --container-color-dark: #212529;
   --shadow-color: #b4b3b3;
-  --navy: #1c1ea6;
+  /* --navy: #1c1ea6;
   --purple: #673ab7;
   --cyan: #2bc0a9;
-  --green: #4caf50;
-  --blue: #2196f3;
+  --green: #4caf50; */
+  /* --blue: #2196f3; */
   --app-color: #448aff;
 
   --dark-bg: #181a1b;
@@ -27,7 +26,6 @@
   --shadowed-circle-shadow-color: var(--shadow-color);
   --navbar-color: rgb(68, 68, 68); /* #e1e2ec; */
 
-  --breakpoint: 625px;
   --border-radius: 10px;
   --navbar-height: 50px;
 
@@ -278,7 +276,7 @@ body {
   align-self: center;
   z-index: 1000;
   min-width: 100px;
-  max-width: calc(100vw - 16px);
+  max-width: calc(100vw - 10px);
   padding: 4px 0;
   border: 0.5px solid var(--secondary-text);
   border-radius: var(--border-radius);
@@ -289,7 +287,7 @@ body {
 .dropdown-item {
   display: block;
   width: 100%;
-  padding: 10px 8px 10px 8px;
+  padding: 10px 8px;
   border: none;
   cursor: pointer;
   color: var(--text);
@@ -339,12 +337,13 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  row-gap: 5px;
+  row-gap: 3px;
 }
 
 .drawer-btn {
-  padding: 10px;
+  padding: 6px;
   border: none;
+  border-radius: var(--border-radius);
   background: transparent;
   color: #d7d7d7 !important;
   cursor: pointer;
@@ -507,6 +506,50 @@ div.project-body {
   margin: 0;
 }
 
+.project-dropdown-container {
+  display: inline-block;
+  position: relative;
+}
+.project-dropdown-trigger {
+  display: flex;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  background-color: unset;
+}
+.project-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  align-self: center;
+  z-index: 1000;
+  right: 0;
+  min-width: 120px;
+  /* max-width: calc(100vw - 10px); */
+  padding: 4px 0;
+  border: 0.5px solid var(--secondary-text);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: var(--bg-color);
+}
+
+.project-dropdown-item {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  width: 100%;
+  padding: 10px 8px;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  text-align: left;
+  align-items: center;
+  background-color: unset;
+}
+.project-dropdown-item:hover {
+  background-color: rgba(245, 245, 245, 0.163);
+}
+
 /* about section */
 .about-section {
   display: flex;
@@ -653,6 +696,7 @@ div.project-body {
 
 button {
   outline: none;
+  font-family: inherit;
 }
 
 /* theme switch */
