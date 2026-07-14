@@ -23,6 +23,7 @@
 
   --border-radius: 10px;
   --navbar-height: 50px;
+  --section-padding: var(--navbar-height);
 
   line-height: 1.2;
   font-size: 14px;
@@ -436,8 +437,8 @@ body {
 .project-meta {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center; /* flex-end; */
   gap: 5px;
 }
 .project-period {
@@ -452,8 +453,15 @@ body {
 .project-company {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  gap: 3px;
+  align-items: center; /* flex-end; */
+  column-gap: 3px;
+}
+.project-company a {
+  display: flex;
+  align-items: center;
+  column-gap: 3px;
+  text-decoration: none;
+  color: inherit;
 }
 .company-logo {
   width: 25px;
@@ -490,7 +498,6 @@ body {
 .project-title-row {
   display: flex;
   flex-direction: row;
-  /* justify-content: flex-start; */
   align-items: center;
   gap: 10px;
 }
@@ -565,6 +572,9 @@ body {
 
 /* Desktop UI */
 @media screen and (min-width: 625px) {
+  :root {
+    --section-padding: 30px;
+  }
   .drawer {
     display: block;
   }
