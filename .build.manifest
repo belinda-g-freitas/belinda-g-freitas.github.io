@@ -3,6 +3,7 @@ assets/fonts/PlaypenSans.ttf
 assets/icons/android-studio.png
 assets/icons/bruno.png
 assets/icons/dbeaver.png
+assets/icons/dotnet.png
 assets/icons/draw-io.png
 assets/icons/express-js.png
 assets/icons/insomnia.png
@@ -57,6 +58,7 @@ assets/icons/svg/trello.svg
 assets/icons/svg/vercel.svg
 assets/icons/svg/web.svg
 assets/icons/svg/x-twitter.svg
+assets/icons/trello.png
 assets/icons/typescript.png
 assets/icons/vscode.png
 assets/images/apple-touch-icon.png
@@ -65,8 +67,6 @@ assets/images/collapsible-side-menu-web.png
 assets/images/daragroups.jpeg
 assets/images/ecovlex.jpeg
 assets/images/gochap-driver.webp
-assets/images/gochap-home-1.jpg
-assets/images/gochap-home-2.jpg
 assets/images/gochap-merchant.png
 assets/images/gochap.webp
 assets/images/gofarii.png
