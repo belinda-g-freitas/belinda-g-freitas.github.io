@@ -642,7 +642,7 @@ body {
     left: 0;
     height: var(--navbar-height);
     /* background: var(--navbar-color); */
-    background: color-mix(in srgb, var(--navbar-color) 45%, transparent);
+    background: color-mix(in srgb, var(--navbar-color) 40%, transparent);
     color: white;
     padding-inline: 10px;
     width: 100%;
